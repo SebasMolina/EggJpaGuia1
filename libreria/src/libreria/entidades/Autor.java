@@ -1,6 +1,7 @@
 
 package libreria.entidades;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,8 +17,11 @@ import javax.persistence.Table;
 public class Autor {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name= "id")
     private int id;
+    @Column(name= "nombre", nullable = false)
     private String nombre;
+    @Column(name= "alta", nullable = false)
     private boolean alta;
 
     public Autor() {

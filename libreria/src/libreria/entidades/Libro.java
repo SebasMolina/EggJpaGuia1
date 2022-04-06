@@ -1,6 +1,7 @@
 
 package libreria.entidades;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -19,11 +20,17 @@ public class Libro {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long ISBN;
+    @Column(name= "titulo", nullable = false)
     private String titulo;
+    @Column(name= "anio", nullable = false)
     private int anio;
+    @Column(name= "ejemplares", nullable = false)
     private int ejemplares;
+    @Column(name= "ejemplares_prestados", nullable = false)
     private int ejemplaresPrestados;
+    @Column(name= "ejemplares_restantes", nullable = false)
     private int ejemplaresRestantes;
+    @Column(name= "alta", nullable = false)
     private boolean alta;
     @ManyToOne(fetch = FetchType.EAGER)
     private Autor autor;
